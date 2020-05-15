@@ -4,6 +4,10 @@ const router = express.Router();
 
 const productApi = require("../controller/product");
 
-router.post("/product", productApi.addProducts);
+router.get("/", productApi.getProduct);
+router.post("/create", productApi.addProduct);
+router.post("/:id/update_quantity", productApi.updateProduct);
+router.delete("/:id", productApi.deleteProduct);
+
 
 module.exports = router;
